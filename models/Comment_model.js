@@ -1,19 +1,19 @@
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
-export const commentSchema = new Schema({
-  //username of person who posted a comment
-  userName: {
-    type: String,
-    required: true,
-  },
+export const User_commentSchema = new Schema({
+	//username of person who posted a comment
+	user_name: {
+		type: String,
+		required: true,
+	},
 
-  //posted comment
-  comment: {
-    type: String,
-  },
+	//posted comment
+	user_comment: {
+		type: String,
+	},
 });
 
-const commentModel = model("comment", commentSchema);
+const CommentModel = model("comment", User_commentSchema);
 
-export default commentModel;
+export default CommentModel;

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { commentSchema } from "./Comment_model";
+import { User_commentSchema } from "./Comment_model";
 const { Schema, model } = mongoose;
 
 export const postSchema = new Schema({
@@ -10,31 +10,31 @@ export const postSchema = new Schema({
 	},
 
 	//details of blog
-	details: {
+	blog_details: {
 		type: String,
 	},
 
 	//date
-	date: {
+	blog_date: {
 		type: Date,
 		default: Date.now(),
 	},
 
 	//author of post
-	author: {
+	post_author: {
 		type: mongoose.Schema.Types.ObjectId,
 		required: true,
 		ref: "author",
 	},
 
 	//banner for the post
-	banner: {
+	post_banner: {
 		type: String,
 	},
 
 	//displays all comments on post
-	comments: {
-		type: [commentSchema],
+	user_comments: {
+		type: [User_commentSchema],
 	},
 
 	//likes for a specific post
